@@ -1,5 +1,9 @@
 <div class="navbar">
     <div>
+      <button *ngIf="!(authStateService.authState$ | async)?.isAuthenticated" (click)="login()">Login</button>
+      <button *ngIf="(authStateService.authState$ | async)?.isAuthenticated" (click)="logout()">Logout</button>
+    </div>
+    <div>
       GraphQL Angular App
     </div>
     <nav>

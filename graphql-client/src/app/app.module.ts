@@ -11,6 +11,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { CharacterComponent } from './character/character.component';
 import { SpeciesComponent } from './species/species.component';
 
+import {
+  OKTA_CONFIG,
+  OktaAuthModule
+} from '@okta/okta-angular';
+import { OktaAuth } from '@okta/okta-auth-js';
+
+const config = {
+  issuer: 'https://dev-20943582.okta.com/oauth2/default',
+  clientId: '0oa1yyx22sPRgAjK85d7',
+  redirectUri: window.location.origin + '/login/callback'
+}
+const oktaAuth = new OktaAuth(config);
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +38,14 @@ import { SpeciesComponent } from './species/species.component';
     BrowserModule,
     AppRoutingModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    OktaAuthModule
+  ],
+  providers: [
+    { 
+      provide: OKTA_CONFIG, 
+      useValue: { oktaAuth } 
+    }
   ],
   bootstrap: [AppComponent]
 })

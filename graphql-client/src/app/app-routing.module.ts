@@ -4,6 +4,7 @@ import { CharacterComponent } from './character/character.component';
 import { HomeComponent } from './home/home.component';
 import { BrowseComponent } from './browse/browse.component';
 import { SpeciesComponent } from './species/species.component';
+import { OktaAuthGuard, OktaCallbackComponent } from '@okta/okta-angular';
 
 const routes: Routes = [
   {
@@ -13,14 +14,21 @@ const routes: Routes = [
   {
     path: 'browse',
     component: BrowseComponent,
+    canActivate: [ OktaAuthGuard ]
   },
   {
     path: 'character',
     component: CharacterComponent,
+    canActivate: [ OktaAuthGuard ]
   },
   {
     path: 'species',
     component: SpeciesComponent,
+    canActivate: [ OktaAuthGuard ]
+  },
+  {
+    path: 'login/callback',
+    component: OktaCallbackComponent
   },
 ];
 
