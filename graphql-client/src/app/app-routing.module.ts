@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CharacterComponent } from './character/character.component';
 import { HomeComponent } from './home/home.component';
 import { BrowseComponent } from './browse/browse.component';
+import { CharacterComponent } from './character/character.component';
 import { SpeciesComponent } from './species/species.component';
 import { OktaAuthGuard, OktaCallbackComponent } from '@okta/okta-angular';
 

@@ -3,18 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { BrowseComponent } from './browse/browse.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { BrowseComponent } from './browse/browse.component';
 import { CharacterComponent } from './character/character.component';
 import { SpeciesComponent } from './species/species.component';
-
-import {
-  OKTA_CONFIG,
-  OktaAuthModule
-} from '@okta/okta-angular';
+import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
 
 const config = {
@@ -24,12 +20,11 @@ const config = {
 }
 const oktaAuth = new OktaAuth(config);
 
-
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     NavbarComponent,
+    HomeComponent,
     BrowseComponent,
     CharacterComponent,
     SpeciesComponent
@@ -41,12 +36,7 @@ const oktaAuth = new OktaAuth(config);
     HttpClientModule,
     OktaAuthModule
   ],
-  providers: [
-    { 
-      provide: OKTA_CONFIG, 
-      useValue: { oktaAuth } 
-    }
-  ],
+  providers: [{ provide: OKTA_CONFIG, useValue: { oktaAuth }}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

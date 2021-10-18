@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Apollo, gql, QueryRef } from 'apollo-angular';
 
-
 export interface Character {
   name: string;
   homeworld: string;
@@ -45,7 +44,7 @@ export class CharactersService {
   private findCharacterQuery: QueryRef<{character: CharacterDetail}, { name: string}>;
   private findSpeciesQuery: QueryRef<{species: Species}, { name: string}>;
 
-  constructor(private apollo: Apollo) { 
+  constructor(private apollo: Apollo) {
     this.charactersQuery = this.apollo.watchQuery({
       query: gql`query characters($offset: Int!) {
         characters(offset: $offset) {
