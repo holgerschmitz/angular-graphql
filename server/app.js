@@ -10,9 +10,9 @@ const oktaAuth = require('./auth');
 
 const app = express()
   .use(cors())
-  .use(json())
-  .use(bearerToken())
-  .use(oktaAuth);
+  .use(json());
+  // .use(bearerToken())
+  // .use(oktaAuth);
 
 
 const schema = buildSchema(fs.readFileSync('schema.graphql', 'utf8'));

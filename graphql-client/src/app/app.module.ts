@@ -18,8 +18,8 @@ import {
 import { OktaAuth } from '@okta/okta-auth-js';
 
 const config = {
-  issuer: 'https://dev-20943582.okta.com/oauth2/default',
-  clientId: '0oa1yyx22sPRgAjK85d7',
+  issuer: 'https://{yourOktaDomain}/oauth2/default',
+  clientId: '{yourClientID}',
   redirectUri: window.location.origin + '/login/callback'
 }
 const oktaAuth = new OktaAuth(config);
