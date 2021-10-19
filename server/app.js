@@ -14,9 +14,7 @@ const app = express()
   // .use(bearerToken())
   // .use(oktaAuth);
 
-
 const schema = buildSchema(fs.readFileSync('schema.graphql', 'utf8'));
-
 const characters = parse(fs.readFileSync('characters.csv', 'utf8'), { columns: true });
 const species = parse(fs.readFileSync('species.csv', 'utf8'), { columns: true });
 

@@ -11,12 +11,10 @@ export class BrowseComponent implements OnInit {
   count: number = 0;
   characters: Character[] = [];
 
-  constructor(private characterService: CharactersService) {
-  }
+  constructor(private characterService: CharactersService) {}
 
-  ngOnInit(): void {
-    console.log('INIT Browse');
-    this.updateCharacters();
+  async ngOnInit(): Promise<void> {
+    await this.updateCharacters();
   }
 
   async updateCharacters() {
@@ -33,14 +31,13 @@ export class BrowseComponent implements OnInit {
     return this.offset + 10 < this.count;
   }
 
-  onPrevious() {
+  async onPrevious() {
     this.offset -= 10;
-    this.updateCharacters();
+    await this.updateCharacters();
   }
 
-  onNext() {
+  async onNext() {
     this.offset += 10;
-    this.updateCharacters();
+    await this.updateCharacters();
   }
-
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { OktaAuthStateService } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
 
@@ -7,8 +7,8 @@ import { OktaAuth } from '@okta/okta-auth-js';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
-  
+export class NavbarComponent {
+
   constructor(public authStateService: OktaAuthStateService, private oktaAuth: OktaAuth) {}
 
   async login() {
@@ -17,8 +17,5 @@ export class NavbarComponent implements OnInit {
 
   async logout() {
     await this.oktaAuth.signOut();
-  }
-  
-  ngOnInit(): void {
   }
 }
