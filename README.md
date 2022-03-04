@@ -1,3 +1,5 @@
+[![Support Ukraine Badge](https://bit.ly/support-ukraine-now)](https://github.com/support-ukraine/support-ukraine)
+
 # Consume a GraphQL API from Angular Example
 
 This repository shows you how to consume a GraphQL API from Angular. Please read [How to Consume a GraphQL API from Angular][blog] to see how it was created.
